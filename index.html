@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ბარაქა - მეცნიერება უხვი მოსავლისთვის</title>
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/styles/animate.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="modal fade search-modal" id="ModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-close">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </div>
+                    <section class="login-modal">
+                        <div class="modal-popup">
+                            <div class="login-popup-inner">
+                                <button class="login-popup-close"> <i class="fas fa-times"></i> </button>
+                                <h1>შესვლა</h1>
+                                    <form>
+                                        <div class="login-container">
+                                            <i class="far fa-envelope"></i>
+                                            <input type="email" name="" id="" placeholder="ელ.ფოსტა">
+                                        </div>
+                                            <div class="password-container">
+                                                <i class="fas fa-key"></i>
+                                                <input type="password" name="" id="" placeholder="პაროლი">
+                                            </div>
+                                        <input type="submit" value="შესვლა">
+                                    </form>
+                                <ul>
+                                    <li><a href="">პაროლის აღდგენა</a></li>
+                                    <li><a class="register">რეგისტრაცია</a></li>
+                                </ul>
+                            </div>
+                
+                            <!-- რეგისტრაციის popup -->
+                            <div class="register-popup-inner">
+                                <button class="register-popup-close"> <i class="fas fa-times"></i> </button>
+                                <h1>რეგისტრაცია</h1>
+                                    <form>
+                                        <div class="register-container">
+                                            <i class="far fa-envelope"></i>
+                                            <input type="email" name="" id="" placeholder="ელ.ფოსტა">
+                                        </div>
+                                            <div class="password-container">
+                                                <i class="fas fa-user"></i>
+                                                <input type="text" name="name" id="" placeholder="სახელი">
+                                            </div>
+                
+                                                <div class="password-container">
+                                                    <i class="fas fa-key"></i>
+                                                    <input type="password" name="" id="" placeholder="პაროლი">
+                                                </div>
+                                        <input type="submit" value="რეგისტრაცია">
+                                    </form>
+                                <ul>
+                                    <li><a href="">პაროლის აღდგენა</a></li>
+                                    <li><a href="#">ავტორიზაცია</a></li>
+                                </ul>
+                            </div>
+                
+                        </div>
+                
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">პროდუქტის დასახელება</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img src="/images/product.jpg" alt="">
+                        </div>
+                        <div class="col-lg-6">
+
+                            <ul class="ap-services">
+                                <li> <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    კატეგორია: აგრო ტექნიკა</li>
+                                <li><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    კატეგორია: პესტიციდები
+                                </li>
+                                <li><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    დაავაადებები: ჭრაქი</li>
+                                <li class="pPrice"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                                    ფასი: <span class="_price">40000</span>₾</li>
+                                <li><i class="fa fa-check-circle" aria-hidden="true"></i>ზომა: 0.5</li>
+
+                            </ul>
+
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt delectus nam, nulla
+                                quia facilis magnam adipisci cum harum perspiciatis neque.</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt delectus nam, nulla
+                                quia facilis magnam adipisci cum harum perspiciatis neque.</p>
+                            <a href="/products/">
+                                სრულად ნახვა
+                            </a>
+                            <a href="" class="addtocart">
+                                კალათაში დამატება
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="agronomy">
+        <a href="/agronomy/">
+            <i class="fa fa-male" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <!----------- Header ------------>
+
+    <div class="top-header">
+        <div class="container-fluid">
+            <nav>
+                <a href="#ModalCenter" data-toggle="modal" data-target="#ModalCenter" class="login"><i class="fas fa-user"></i>ავტორიზაცია</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="page-wrapper-blue header_style_2">
+        <div class="header-area header-sticky">
+            <div class="navigation-top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="navigation-top-search-area pt-15 pb-15">
+                                <div class="row align-items-center">
+                                    <div class="col-6 col-xl-2 col-lg-3 order-1 col-md-6 col-sm-5 mobile_common">
+                                        <div class="logo">
+                                            <a href="/" class="theme-logo">
+                                                <img src="/images/logo.png" alt="Baraka">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8  col-lg-7 order-4 order-lg-2 mt-md-25 mt-sm-25">
+                                        <div class="navigation-menu-area">
+                                            <div class="main-menu d-none d-lg-block">
+                                                <nav style="display: block;">
+                                                    <ul>
+                                                        <li><a href="/about">ჩვენ შესახებ</a>
+
+                                                        </li>
+                                                        <li class="menu-item-has-children">
+                                                            <a href="/products">პროდუქცია</a>
+                                                            <ul class="common-class sub-menu">
+                                                                <li class="sub-drop-add-class">
+                                                                    <a href="">ფუნგიციდი</a>
+                                                                    <ul class="sub-sub-menu">
+                                                                        <li> <a href="">ნიადაგში შესატანი სასუქები</a>
+                                                                        </li>
+                                                                        <li><a href="">წყალში ხსნადი სასუქები</a></li>
+                                                                        <li><a href="">ფოთლოვანი კვების სასუქები</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li class=""><a href="">ინსექტიციდი</a></li>
+                                                                <li class=""><a href="">ჰერბიციდი</a>
+                                                                </li>
+                                                                <li class=""><a href="">სათესლე
+                                                                        მასალა</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="menu-item-has-children culture-menu">
+                                                            <a href="/culture/index.html">კულტურა</a>
+                                                            <ul class="common-class sub-menu">
+                                                                <li>
+                                                                    <a href="">ფუნგიციდი</a>
+                                                                </li>
+                                                                <li class=""><a href="">ინსექტიციდი</a></li>
+                                                                <li class=""><a href="">ჰერბიციდი</a>
+                                                                </li>
+                                                                <li class=""><a href="">ჰერბიციდი</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><a href="/news/">სიახლეები</a></li>
+                                                        <li><a href="/gallery/">გალერია</a></li>
+                                                        <li><a href="/contact/">კონტაქტი</a></li>
+                                                        <li><a href="/career">კარიერა</a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="col-xl-2 text-right order-2 order-sm-3 order-lg-4 order-xs-2 mobile_common">
+                                        <div class="header-cart-icon">
+                                            <div class="search">
+                                                <a href="/cart/index.html">
+                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                            <div class="language-bar">
+                                                <ul>
+                                                    <li><a href="" class="active"><img src="/images/geo.jpg"
+                                                                alt="">ქარ</a></li>
+                                                    <li><a href=""><img src="/images/eng.png" alt="">ENG</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----------- Header ------------>
+
+
+    <!----------- Hero Slider ------------>
+
+
+    <div class="swiper-container-home">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="hero-slider" style="background-image: url('/images/Slider-3.jpg');">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="hero-slider-content text-left">
+                                    <p class="slider-title slider-title--big-bold">ბარაქა - მეცნიერება უხვი მოსავლისთვის
+                                    </p>
+                                    <p class="slider-title slider-title--big-light">ბარაქა წარმატებული ბიზნესის
+                                        გარანტიაა!
+                                        პროფესიონალი აგროკონსულტანტებისგან დაკომპლექტებული გუნდი, უმაღლესი ხარისხის
+                                        იმპორტირებული
+                                        სასუქები</p>
+                                    <a class="theme-button hero-slider-button" href="" tabindex="0">პროდუქცია</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="hero-bottom">
+                        <img src="/images/slide-bottom.png" alt="">
+                    </div> -->
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="hero-slider" style="background-image: url('/images/Slider-3.jpg');">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="hero-slider-content text-left">
+                                    <p class="slider-title slider-title--big-bold">ბარაქა - მეცნიერება უხვი მოსავლისთვის
+                                    </p>
+                                    <a class="theme-button hero-slider-button" href="" tabindex="0">პროდუქცია</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="hero-bottom">
+                        <img src="/images/slide-bottom.png" alt="">
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+
+    <!----------- Hero Slider ------------>
+
+    <!----------- Partners ------------>
+
+    <div class="container-fluid home-spaces-category home-title">
+        <div class="wow fadeInRight title-div" data-wow-duration="2s">
+            <h2>კატეგორიები</h2>
+        </div>
+        <div class="category-section">
+            <div class="container">
+                <div class="row">
+                    <div class="wow bounceInUp swiper-container-category" data-wow-duration="2s">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="">
+                                    <div class="product-grid mx-auto mb-4">
+                                        <img src="/images/category.png" alt="">
+                                        <span>პესტიციდები</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="">
+                                    <div class="product-grid mx-auto mb-4">
+                                        <img src="/images/category.png" alt="">
+                                        <span>პესტიციდები</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="">
+                                    <div class="product-grid mx-auto mb-4">
+                                        <img src="/images/category.png" alt="">
+                                        <span>პესტიციდები</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="">
+                                    <div class="product-grid mx-auto mb-4">
+                                        <img src="/images/category.png" alt="">
+                                        <span>პესტიციდები</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="">
+                                    <div class="product-grid mx-auto mb-4">
+                                        <img src="/images/category.png" alt="">
+                                        <span>პესტიციდები</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----------- Partners ------------>
+
+    <!----------- Products Slider ------------>
+
+    <div class="container-fluid home-spaces home-title">
+        <div class="wow fadeInRight title-div" data-wow-duration="2s">
+            <h2>მოთხოვნადი პროდუქტები</h2>
+        </div>
+        <div class="home-products-grid">
+            <div class="row">
+                <div class="wow fadeInLeft col-lg-3" data-wow-duration="2s">
+                    <div class="product_outer">
+                        <article class="product_inner">
+                            <figure class="cmsms_product_img">
+                                <a href="">
+                                    <img src="/images/product.jpg" alt="">
+                                </a>
+                            </figure>
+                            <div class="product-details">
+                                <header class="cmsms_product_header entry-header">
+                                    <h5 class="cmsms_product_title entry-title">
+                                        <a href="">შესაწამლი პროდუქტი</a>
+                                    </h5>
+                                </header>
+                                <span class="price">ფასი: <span
+                                        class="woocommerce-Price-amount amount"><span
+                                            class="woocommerce-Price-currencySymbol">$</span>17.55</span></span>
+                                <footer class="entry-meta cmsms_product_footer">
+                                    <a href="" class=""> <i class="fa fa-shopping-cart" aria-hidden="true"></i>კალათაში დამატება</a> 
+                                    <a href="#exampleModal" data-toggle="modal" data-target="#exampleModal" class="cmsms_details_button cmsms-icon-menu"><i
+                                         class="fas fa-eye"></i>სწრაფად ნახვა</a> 
+            
+                                </footer>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+
+                <div class="wow fadeInLeft col-lg-3" data-wow-duration="2s">
+                    <div class="product_outer">
+                        <article class="product_inner">
+                            <figure class="cmsms_product_img">
+                                <a href="">
+                                    <img src="/images/product.jpg" alt="">
+                                </a>
+                            </figure>
+                            <div class="product-details">
+                                <header class="cmsms_product_header entry-header">
+                                    <h5 class="cmsms_product_title entry-title">
+                                        <a href="">შესაწამლი პროდუქტი</a>
+                                    </h5>
+                                </header>
+                                <span class="price">ფასი: <span
+                                        class="woocommerce-Price-amount amount"><span
+                                            class="woocommerce-Price-currencySymbol">$</span>17.55</span></span>
+                                <footer class="entry-meta cmsms_product_footer">
+                                    <a href="" class=""> <i class="fa fa-shopping-cart" aria-hidden="true"></i>კალათაში დამატება</a> 
+                                    <a href="#exampleModal" data-toggle="modal" data-target="#exampleModal" class="cmsms_details_button cmsms-icon-menu"><i
+                                         class="fas fa-eye"></i>სწრაფად ნახვა</a> 
+            
+                                </footer>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="wow fadeInLeft col-lg-3" data-wow-duration="2s">
+                    <div class="product_outer">
+                        <article class="product_inner">
+                            <figure class="cmsms_product_img">
+                                <a href="">
+                                    <img src="/images/product.jpg" alt="">
+                                </a>
+                            </figure>
+                            <div class="product-details">
+                                <header class="cmsms_product_header entry-header">
+                                    <h5 class="cmsms_product_title entry-title">
+                                        <a href="">შესაწამლი პროდუქტი</a>
+                                    </h5>
+                                </header>
+                                <span class="price">ფასი: <span
+                                        class="woocommerce-Price-amount amount"><span
+                                            class="woocommerce-Price-currencySymbol">$</span>17.55</span></span>
+                                <footer class="entry-meta cmsms_product_footer">
+                                    <a href="" class=""> <i class="fa fa-shopping-cart" aria-hidden="true"></i>კალათაში დამატება</a> 
+                                    <a href="#exampleModal" data-toggle="modal" data-target="#exampleModal" class="cmsms_details_button cmsms-icon-menu"><i
+                                         class="fas fa-eye"></i>სწრაფად ნახვა</a> 
+            
+                                </footer>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="wow fadeInLeft col-lg-3" data-wow-duration="2s">
+                    <div class="product_outer">
+                        <article class="product_inner">
+                            <figure class="cmsms_product_img">
+                                <a href="">
+                                    <img src="/images/product.jpg" alt="">
+                                </a>
+                            </figure>
+                            <div class="product-details">
+                                <header class="cmsms_product_header entry-header">
+                                    <h5 class="cmsms_product_title entry-title">
+                                        <a href="">შესაწამლი პროდუქტი</a>
+                                    </h5>
+                                </header>
+                                <span class="price">ფასი: <span
+                                        class="woocommerce-Price-amount amount"><span
+                                            class="woocommerce-Price-currencySymbol">$</span>17.55</span></span>
+                                <footer class="entry-meta cmsms_product_footer">
+                                    <a href="" class=""> <i class="fa fa-shopping-cart" aria-hidden="true"></i>კალათაში დამატება</a> 
+                                    <a href="#exampleModal" data-toggle="modal" data-target="#exampleModal" class="cmsms_details_button cmsms-icon-menu"><i
+                                         class="fas fa-eye"></i>სწრაფად ნახვა</a> 
+            
+                                </footer>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!----------- Products Slider ------------>
+
+
+    <!----------- Our Mission ------------>
+
+    <div class="container-fluid home-spaces home-title">
+        <div class="wow fadeInRight title-div" data-wow-duration="2s">
+            <h2>ჩვენი მისია</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 left-side">
+                <div class="brand-side">
+                    <div class="top-brand">
+                        <h3>უმაღლესი ხარისხის პროდუქცია</h3>
+                        <p>შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს</p>
+                    </div>
+                    <div class="bottom-brand">
+                        <h3>უმაღლესი ხარისხის პროდუქცია</h3>
+                        <p>შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს</p>
+                    </div>
+                </div>
+                <div class="brand-image">
+                    <img src="/images/left.png" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 right-side">
+                <div class="brand-image">
+                    <img src="/images/right.png" alt="">
+                </div>
+                <div class="brand-side">
+                    <div class="top-brand">
+                        <h3>უმაღლესი ხარისხის პროდუქცია</h3>
+                        <p>შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს</p>
+                    </div>
+                    <div class="bottom-brand">
+                        <h3>უმაღლესი ხარისხის პროდუქცია</h3>
+                        <p>შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----------- Our Mission ------------>
+
+
+    <!----------- News ------------>
+
+    <div class="container-fluid home-spaces home-title">
+        <div class="wow fadeInRight title-div" data-wow-duration="2s">
+            <h2>სიახლეები</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="wow fadeInUp swiper-slide" data-wow-duration="3s">
+                            <div class="news-block">
+                                <div class="blog-entry justify-content-end">
+                                    <a href="/newsin/" class="block-20"
+                                        style="background-image: url('/images/blog.jpg');">
+                                    </a>
+                                    <div class="text p-4 float-right d-block">
+                                        <div class="topper d-flex align-items-center">
+                                            <div class="one py-2 pl-3 pr-1 align-self-stretch">
+                                                <span class="day">24</span>
+                                            </div>
+                                            <div class="two pl-0 pr-3 py-2 align-self-stretch">
+                                                <span class="yr">2020</span>
+                                                <span class="mos">January</span>
+                                            </div>
+                                        </div>
+                                        <h3 class="heading mb-0"><a href="#">სოფლის მეურნეობა საქართველოში
+                                            </a></h3>
+                                        <p>A small river named Duden flows by their place and supplies it with the
+                                            necessary
+                                            regelialia.</p>
+                                        <p><a href="/newsin/" class="blog-more">კითხვის გაგრძელება</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wow fadeInUp swiper-slide" data-wow-duration="3s">
+                            <div class="news-block">
+                                <div class="blog-entry justify-content-end">
+                                    <a href="/newsin/" class="block-20"
+                                        style="background-image: url('/images/blog.jpg');">
+                                    </a>
+                                    <div class="text p-4 float-right d-block">
+                                        <div class="topper d-flex align-items-center">
+                                            <div class="one py-2 pl-3 pr-1 align-self-stretch">
+                                                <span class="day">24</span>
+                                            </div>
+                                            <div class="two pl-0 pr-3 py-2 align-self-stretch">
+                                                <span class="yr">2020</span>
+                                                <span class="mos">January</span>
+                                            </div>
+                                        </div>
+                                        <h3 class="heading mb-0"><a href="#">სოფლის მეურნეობა საქართველოში
+                                            </a></h3>
+                                        <p>A small river named Duden flows by their place and supplies it with the
+                                            necessary
+                                            regelialia.</p>
+                                        <p><a href="/newsin/" class="blog-more">კითხვის გაგრძელება</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wow fadeInUp swiper-slide" data-wow-duration="3s">
+                            <div class="news-block">
+                                <div class="blog-entry justify-content-end">
+                                    <a href="/newsin/" class="block-20"
+                                        style="background-image: url('/images/blog.jpg');">
+                                    </a>
+                                    <div class="text p-4 float-right d-block">
+                                        <div class="topper d-flex align-items-center">
+                                            <div class="one py-2 pl-3 pr-1 align-self-stretch">
+                                                <span class="day">24</span>
+                                            </div>
+                                            <div class="two pl-0 pr-3 py-2 align-self-stretch">
+                                                <span class="yr">2020</span>
+                                                <span class="mos">January</span>
+                                            </div>
+                                        </div>
+                                        <h3 class="heading mb-0"><a href="#">სოფლის მეურნეობა საქართველოში
+                                            </a></h3>
+                                        <p>A small river named Duden flows by their place and supplies it with the
+                                            necessary
+                                            regelialia.</p>
+                                        <p><a href="/newsin/" class="blog-more">კითხვის გაგრძელება</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="news-block">
+                                <div class="blog-entry justify-content-end">
+                                    <a href="/newsin/" class="block-20"
+                                        style="background-image: url('/images/blog.jpg');">
+                                    </a>
+                                    <div class="text p-4 float-right d-block">
+                                        <div class="topper d-flex align-items-center">
+                                            <div class="one py-2 pl-3 pr-1 align-self-stretch">
+                                                <span class="day">24</span>
+                                            </div>
+                                            <div class="two pl-0 pr-3 py-2 align-self-stretch">
+                                                <span class="yr">2020</span>
+                                                <span class="mos">January</span>
+                                            </div>
+                                        </div>
+                                        <h3 class="heading mb-0"><a href="#">სოფლის მეურნეობა საქართველოში
+                                            </a></h3>
+                                        <p>A small river named Duden flows by their place and supplies it with the
+                                            necessary
+                                            regelialia.</p>
+                                        <p><a href="/newsin/" class="blog-more">კითხვის გაგრძელება</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----------- News ------------>
+
+
+    <!----------- Partners ------------>
+
+    <div class="container-fluid home-spaces home-title">
+        <div class="wow fadeInRight title-div" data-wow-duration="2s">
+            <h2>ჩვენი პარტნიორები</h2>
+        </div>
+        <section class="customer-logos slider">
+            <div class="slide"><a href=""><img src="/images/client1.png"></a></div>
+            <div class="slide"><a href=""><img src="/images/client2.png"></a></div>
+            <div class="slide"><a href=""><img src="/images/client3.png"></a></div>
+            <div class="slide"><a href=""><img src="/images/client1.png"></a></div>
+            <div class="slide"><a href=""><img src="/images/client3.png"></a></div>
+            <div class="slide"><a href=""><img src="/images/client1.png"></a></div>
+            <div class="slide"><a href=""><img src="/images/client2.png"></a></div>
+            <div class="slide"><a href=""><img src="/images/client3.png"></a></div>
+        </section>
+    </div>
+
+    <!----------- Partners ------------>
+
+
+    <!----------- Subscribe ------------>
+
+    <section class="subscription bg-white home-spaces">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="subscription-wrapper">
+                        <div
+                            class="d-flex subscription-content justify-content-between align-items-center flex-column flex-md-row text-center text-md-left">
+                            <h3 class="flex-fill">გამოიწერეთ <br> ჩვენი სიახლეები</h3>
+                            <form action="#" class="row flex-fill">
+                                <div class="col-lg-7 my-md-2 my-2"> <input type="email"
+                                        class="form-control px-4 border-0 w-100 text-center text-md-left" id="email"
+                                        placeholder="თქვენი ელ-ფოსტა" name="email"> </div>
+                                <div class="col-lg-5 my-md-2 my-2"> <button type="submit"
+                                        class="btn btn-primary btn-lg border-0 w-100">გაგზავნა</button> </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!----------- Subscribe ------------>
+
+
+    <!----------- Footer ------------>
+
+    <footer class="footer-bs">
+        <div class="row">
+            <div class="col-md-3 footer-brand animated fadeInLeft">
+                <img src="/images/wlogo.png" alt="">
+                <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies.
+                    Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex
+                    mi ut sem.</p>
+                <p>© 2021 Baraka, All rights reserved</p>
+            </div>
+            <div class="col-md-3 footer-nav animated fadeInUp">
+                <h4>მენიუ —</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="pages">
+                            <li><a href="#">ჩვენ შესახებ</a></li>
+                            <li><a href="#">პროდუქცია</a></li>
+                            <li><a href="#">კულტურა</a></li>
+                            <li><a href="#">სიახლეები</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list">
+                            <li><a href="#">გალერია</a></li>
+                            <li><a href="#">კონტაქტი</a></li>
+                            <li><a href="#">კარიერა</a></li>
+                            <li><a href="#">სიახლეები</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 footer-social animated fadeInDown">
+                <h4>დაგვიკავშირდით</h4>
+                <ul>
+                    <li> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <a href="#">თბილისი, დიდი დიღომი, მოსკოვის ქუჩა 44</a></li>
+                    <li> <i class="fas fa-phone"></i><a href="#">579358844</a></li>
+                    <li> <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <a href="#">info@baraka.ge</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-social animated fadeInDown">
+                <h4>სოციალური ქსელები</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!----------- Footer ------------>
+
+    <script src="/js/jquery-3.5.1.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/textyle.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/slick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+    <script src="/js/swiper-bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    <script>
+        new WOW().init();
+
+        $('.slider-title').textyle({
+            duration: 200,
+            delay: 20,
+            easing: 'swing',
+            callback: null
+        });
+    </script>
+
+</body>
+
+</html>
