@@ -187,6 +187,16 @@ $(window).scroll(function() {
 //     $('.search input').toggleClass('active')
 // });
 
+
+$("#file-input").on('click', function () {
+    $(".image-upload label").css("display" , "none");
+    $(".image-upload").addClass("active");
+});
+
+function FileName() {
+  let filename = document.getElementById("file-input").name;
+};
+
 $('.toggle').click(function() {
     $('.toggle-content', this).toggleClass('active')
 });
