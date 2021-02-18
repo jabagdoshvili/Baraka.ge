@@ -785,7 +785,6 @@ ul {
           box-shadow: 0 0rem 0.9375rem rgba(175, 175, 175, 0.5);
   -webkit-transition: .5s;
   transition: .5s;
-  background-image: url("/images/pt.png");
   background-position: center center;
   background-size: cover;
   background-repeat: repeat;
@@ -1120,15 +1119,14 @@ ul {
   margin-top: 1.875rem;
 }
 
-.agronomy {
+.mobile-menu {
   position: fixed;
-  z-index: 999999;
-  top: 30%;
-  right: 0;
-  border-radius: 0.625rem 0rem 0rem 0.625rem;
-  background-color: #1f5948;
-  width: 3.75rem;
-  height: 3.75rem;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1138,6 +1136,140 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  display: none;
+}
+
+.mobile-menu i {
+  position: absolute;
+  z-index: 99;
+  right: 30px;
+  top: 30px;
+  color: white;
+  font-size: 25px;
+}
+
+.mobile-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobile-menu ul li {
+  padding-bottom: 15px;
+}
+
+.mobile-menu ul li a {
+  color: white;
+  font-size: 25px;
+}
+
+@-webkit-keyframes glowing2 {
+  0% {
+    background-color: #1f5948;
+    -webkit-box-shadow: 0 0 3px #1f5948;
+            box-shadow: 0 0 3px #1f5948;
+  }
+  50% {
+    background-color: #1f5948;
+    -webkit-box-shadow: 0 0 40px #1f5948;
+            box-shadow: 0 0 40px #1f5948;
+  }
+  100% {
+    background-color: #1f5948;
+    -webkit-box-shadow: 0 0 3px #1f5948;
+            box-shadow: 0 0 3px #1f5948;
+  }
+}
+
+@keyframes glowing2 {
+  0% {
+    background-color: #1f5948;
+    -webkit-box-shadow: 0 0 3px #1f5948;
+            box-shadow: 0 0 3px #1f5948;
+  }
+  50% {
+    background-color: #1f5948;
+    -webkit-box-shadow: 0 0 40px #1f5948;
+            box-shadow: 0 0 40px #1f5948;
+  }
+  100% {
+    background-color: #1f5948;
+    -webkit-box-shadow: 0 0 3px #1f5948;
+            box-shadow: 0 0 3px #1f5948;
+  }
+}
+
+.swiper-slide {
+  background: transparent !important;
+}
+
+.category-section .container {
+  background-image: url(/images/tired.png);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.agronomy {
+  position: fixed;
+  z-index: 8;
+  top: 30%;
+  right: 0;
+  border-radius: 0.625rem 0rem 0rem 0.625rem;
+  background-color: #1f5948;
+  width: 3.75rem;
+  height: 14.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-animation: glowing2 1500ms infinite;
+          animation: glowing2 1500ms infinite;
+}
+
+.agronomy a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.agronomy span {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  color: white;
+  margin-top: 10px;
+  letter-spacing: 2px;
+  font-size: 15px;
 }
 
 .agronomy i {
@@ -1466,7 +1598,7 @@ main {
 
 main .top {
   padding-top: 3.75rem;
-  min-height: calc(100vh - 19.375rem);
+  min-height: calc(100vh - 30.375rem);
   position: relative;
   overflow: hidden;
   -webkit-transform: translateY(3.125rem);
@@ -1504,6 +1636,10 @@ main .top .row .item .item-helper {
           justify-content: center;
   cursor: pointer;
   background: var(--color);
+}
+
+main .top .row .item .item-helper a {
+  color: #fff;
 }
 
 main .top .row .item .item-helper::before, main .top .row .item .item-helper::after {
@@ -1581,6 +1717,16 @@ main .bottom ul {
   height: 6.25rem;
 }
 
+main .bottom ul img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
 main .bottom ul li {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -1604,6 +1750,44 @@ main .bottom ul li + li {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+.top-header .search {
+  border-radius: 50%;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-color: #1f5948;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.top-header .search i {
+  font-size: 15px;
+  color: white;
+}
+
+.top-header .container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.top-header .container-fluid span {
+  margin-right: 10px;
 }
 
 .top-header a {
@@ -1974,7 +2158,7 @@ main .bottom ul li + li {
   color: rgba(35, 31, 32, 0.5);
   width: 100%;
   border-radius: 2.1875rem;
-  height: 2.125rem;
+  height: 4.250rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1995,7 +2179,7 @@ main .bottom ul li + li {
   font-family: Roboto;
   line-height: 1.4375rem;
   top: 0;
-  height: 2.125rem;
+  height: 4.250rem;
   right: 0;
   bottom: 0;
   width: 100%;
@@ -2030,7 +2214,7 @@ main .bottom ul li + li {
   border: 0.4375rem solid transparent;
   border-color: #231f2033 transparent transparent transparent;
   position: absolute;
-  top: 1rem;
+  top: 50%;
   right: 0.625rem;
 }
 
@@ -3396,6 +3580,32 @@ h3,
   right: 60%;
 }
 
+.mobile-header {
+  display: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0rem 1.25rem 1.8125rem 0rem;
+          box-shadow: rgba(100, 100, 111, 0.2) 0rem 1.25rem 1.8125rem 0rem;
+}
+
+.mobile-header .logo img {
+  height: 48px;
+}
+
+.mobile-header .mobile img {
+  height: 35px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1460px) {
   html {
     font-size: 13px;
@@ -3410,6 +3620,14 @@ h3,
     display: none;
   }
   .header-cart-icon {
+    display: none;
+  }
+  .mobile-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header_style_2 {
     display: none;
   }
 }
@@ -3504,6 +3722,9 @@ h3,
   }
   .left-side, .right-side {
     text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .top-brand {
     margin-bottom: 1.5rem;
@@ -3547,6 +3768,33 @@ h3,
   }
   .slider-title span {
     font-size: 13px;
+  }
+  .hero-slider .hero-slider-content p.slider-title--big-bold {
+    line-height: 18px;
+  }
+  .footer-bs a {
+    font-size: 15px;
+  }
+  .footer-bs .row div {
+    text-align: left;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .footer-bs .footer-nav ul.pages {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .footer-bs .footer-nav h4 {
+    text-align: left;
+  }
+  .new-buttons {
+    width: 100%;
+  }
+  .range-slider {
+    margin-bottom: 15px;
+    margin-top: 15px;
   }
 }
 /*# sourceMappingURL=main.css.map */

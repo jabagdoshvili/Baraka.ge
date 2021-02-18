@@ -31,6 +31,12 @@ void function InitPancPage() {
             category: 'bio',
             index: 4
         },
+        {
+            name: 'Мидгард®',
+            coordinates : [2,10],
+            category: 'bl',
+            index: 5
+        },
     ]
 
     void function Init() {
@@ -38,7 +44,7 @@ void function InitPancPage() {
     }()
 
     function setPanc() {
-        var len = $('.bottom li').length
+        var len = $('.bottom img').length
         var per = 100/len;
 
         var item = ''
@@ -56,7 +62,7 @@ void function InitPancPage() {
             let end = Number(el.coordinates[1])
             item = `<div class="item" style="left:calc( ${start*per}% + 20px); width:calc(${(end-start) * per}% - 45px)">
                         <div class="item-helper  ${category}">
-                            <span>${el.name}</span>
+                            <span><a href="/product">${el.name}</a></span>
                             <div class="shadow"></div>
                         </div>
                         
@@ -105,7 +111,7 @@ var swiper = new Swiper('.swiper-container', {
     clickable: true,
     },
     breakpoints: {
-    640: {
+    320: {
         slidesPerView: 1,
         spaceBetween: 20,
     },
@@ -134,7 +140,7 @@ var swiper = new Swiper('.swiper-container-category', {
     clickable: true,
     },
     breakpoints: {
-    640: {
+    320: {
         slidesPerView: 2,
         spaceBetween: 20,
     },
@@ -175,7 +181,7 @@ var swiper = new Swiper('.swiper-container-home', {
 $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
 
-    if (scroll >= 75) {
+    if (scroll >= 25) {
         $(".header_style_2").addClass("fixed");
     } else if (scroll == 0) {
         $(".header_style_2").removeClass("fixed");
@@ -183,9 +189,13 @@ $(window).scroll(function() {
 
 }); 
 
-// $('.search i').click(function() {
-//     $('.search input').toggleClass('active')
-// });
+$(".mobile").click(function() {
+    $(".mobile-menu").css('display', 'flex')
+})
+
+$(".mobile-menu i").click(function() {
+    $(".mobile-menu").css('display', 'none')
+})
 
 
 $("#file-input").on('click', function () {
