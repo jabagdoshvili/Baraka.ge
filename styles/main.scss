@@ -194,22 +194,57 @@ ul {
     box-shadow: 0 0.125rem 0.5rem 0 rgba(0, 0, 0, .1);
 }
 
-.sub-menu li {
+.culture-menu .sub-menu li {
+    overflow: hidden;
+    position: relative;
+
+
+
     a {
         transition: .5s;
     }
-    position: relative;
-    transition: .5s;
     &:hover {
-        background-color: #1f5948;
-        color: white;
-        transition: .5s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url(/images/tired.png);
+            background-position: 0 center;
+            background-size: contain;
+            background-repeat-y: no-repeat;
+            display: block;
+            animation: 1.5s bgAnimation linear;
+            animation-fill-mode: both;
+            pointer-events: none;
+        }
+
+        @keyframes bgAnimation {
+            to {
+                opacity: 0;
+                background-position: 50px;
+            }
+        }
+
         a {
-            color: white;
+            transition-delay: 1s;
+            color: #000;
             transition: .5s;
         }
     }
 }
+
+// @keyframes bgAnimation {
+//     from {
+//         background-position-x: 0;
+//     }       
+//     to {
+//         background-position-x: 8001px;
+//     }
+// }
 
 .inside-page-hero {
     width: 100%;
@@ -531,7 +566,7 @@ ul {
 }
 
 .news-block {
-    height: 100%;
+    // height: 100%;
     box-shadow: rgba(100, 100, 111, 0.2) 0rem 0.4375rem 1.8125rem 0rem;
 }
 
@@ -761,6 +796,8 @@ ul {
 
 .inside-p-t {
     margin-top: 1.875rem;
+    max-width: 1300px;
+    overflow: auto;
 }
 
 .ap-services {
@@ -829,8 +866,16 @@ ul {
     }
 }
 
+.usual a {
+    &:hover {
+        color: white;
+        background-color: #1f5948;
+    }
+}
+
 .sub-drop-add-class {
     position: relative;
+    overflow: unset;
     &::after {
         position: absolute;
         // top: 60%;
@@ -866,9 +911,9 @@ ul {
                 font-weight: 600;
                 display: block;
                 padding: 0.625rem 0.9375rem;
-                color: #333;
                 &:hover {
                     color: white;
+                    background-color: #1f5948;
                 }
             }
         }
@@ -926,10 +971,20 @@ ul {
     position: absolute;
     top: 50%;
     z-index: 99;
-    width: 71.875rem;
+    width: 85%;
     justify-content: space-between;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.add-to-cart button{
+    margin-top: 20px;
+    display: flex;
+    align-items: unset;
+    justify-content: center;
+    padding: 15px;
+    background-color: #1f5948;
+    color: white;
 }
 
 .space-text span {
@@ -967,7 +1022,7 @@ margin-bottom: 1.25rem;
     height: 100%;
     left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .8);
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -1001,16 +1056,60 @@ margin-bottom: 1.25rem;
     100% { background-color: #1f5948; box-shadow: 0 0 3px #1f5948; }
 }
 
-.swiper-slide {
-    background: transparent !important;
+.swiper-container-category .swiper-slide {
+    background-image: url(/images/tired.png);
+    background-position: center;
+    background-size: 927px;
+    background-repeat: no-repeat;
+    /* width: 100%; */
+    background-position-y: -2px;
+    height: 285px;
 }
 
+
 .category-section .container {
-    background-image: url(/images/tired.png); 
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
+    // background-image: url(/images/tired.png); 
+    // background-position: center;
+    // background-size: cover;
+    // width: 100%;
+    // height: 100%;
+    // background-color: #1f5948;
+}
+
+.product-search {
+    position: fixed;
+    z-index: 8;
+    top: 30%;
+    left: 0;
+    border-radius: 0rem 0.625rem 0.625rem  0rem;
+    background-color: #1f5948;
+    width: 3.75rem;
+    height: 14.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    animation: glowing2 1500ms infinite;
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    span {
+        writing-mode: vertical-rl;
+        color: white;
+        margin-top: 10px;
+        letter-spacing: 2px;
+        font-size: 15px;
+    
+    }
+    i {
+        font-size: 2.1875rem;
+        color: white;
+    }
 }
 
 .agronomy {
@@ -1074,7 +1173,7 @@ margin-bottom: 1.25rem;
     list-style: none;
     padding: 0;
     z-index: 1;
-    height: 18.4375rem;
+    height: 20.4375rem;
 }
 
 .swiper-pagination-bullet-active {
@@ -1544,6 +1643,11 @@ main {
 
 .container-fluid {
     padding: 0 3.75rem;
+    overflow: hidden;
+}
+
+.navigation-top > .container-fluid {
+    overflow: unset !important;
 }
 
 .cult-bord-col .culture-name__sidelist {
@@ -2076,6 +2180,15 @@ main {
     border-radius: 0.125rem;
 }
 
+.culture-section {
+    width: 100%;
+    overflow: auto;
+    main {
+        min-width: 1330px;
+    
+    }
+}
+
 
 
 .culture-menu ul {
@@ -2085,7 +2198,7 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    left: -260%;
+    transform: translateX(calc(-50% + 44px));
 }
 
 .search {
@@ -2352,7 +2465,7 @@ span.number {
 
 .brand-image {
     img {
-        height: 13.75rem;
+        height: 11.75rem;
     }
 }
 
@@ -3009,6 +3122,27 @@ h3,
 	.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 0.0625rem rgba(255,255,255,0.10); }
 }
 
+.child-in-child {
+    position: relative;
+        &:hover {
+            .child-sub {
+                display: flex;
+            }
+        }
+    .child-sub {
+        position: absolute;
+        background-color: white;
+        bottom: 0;
+        transform: translateY(100%);
+        left: 0;
+        display: none;
+    }
+}
+
+.sub-menu li {
+    overflow: unset !important;
+}
+
 
 // NEW EDITS
 
@@ -3191,6 +3325,7 @@ h3,
 
     .left-side, .right-side {
         text-align: center;
+        padding: 0 !important;
         justify-content: center;
     }
 
@@ -3273,8 +3408,20 @@ h3,
     }
 
     .range-slider {
-        margin-bottom: 15px;
+        margin-bottom: 15px !important;
         margin-top: 15px;
+    }
+
+    .agronomy span {
+        font-size: 11px;
+    }
+
+    .login-modal {
+        height: 70vh;
+    }
+
+    .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+        bottom: -2px;
     }
 
 }

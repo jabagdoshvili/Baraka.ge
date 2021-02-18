@@ -102,6 +102,13 @@ $('.register').click(function() {
     $('.register-popup-inner').css('display', 'flex')
 })
 
+$('.login-popup').click(function() {
+    $('.login-popup-inner').css('display', 'flex')
+    $('.register-popup-inner').css('display', 'none')
+})
+
+
+
 var swiper = new Swiper('.swiper-container', {
     slidesPerView: 3,
     spaceBetween: 10,
@@ -127,30 +134,26 @@ var swiper = new Swiper('.swiper-container', {
 });
 
 var swiper = new Swiper('.swiper-container-category', {
-    slidesPerView: 4,
-    spaceBetween: 10,
+    slidesPerView: 3,
     // init: false,
     loop: true,
-    // autoplay: {
-    //   delay: 1500,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     pagination: {
     el: '.swiper-pagination',
     clickable: true,
     },
     breakpoints: {
     320: {
-        slidesPerView: 2,
-        spaceBetween: 20,
+        slidesPerView: 1,
     },
     768: {
-        slidesPerView: 4,
-        spaceBetween: 40,
+        slidesPerView: 3,
     },
     1024: {
-        slidesPerView: 4,
-        spaceBetween: 20,
+        slidesPerView: 3,
     },
     }
 });
