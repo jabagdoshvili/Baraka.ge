@@ -107,7 +107,49 @@ $('.login-popup').click(function() {
     $('.register-popup-inner').css('display', 'none')
 })
 
+$('.search').click(function() {
+    $('.filter-main-row').toggleClass('active')
+})
 
+$('.modal-close i').click(function() {
+    $("#ModalCenter").modal('hide');
+})
+
+$('.product-search').on('mousemove', function () {
+    $('.filter-main-row').addClass('active')
+});
+
+$('.close-filter').click(function() {
+    $('.filter-main-row').removeClass('active')
+})
+
+$('.filter-row ul li.sasuqi').click(function () {
+    $('.filter-row ul li').removeClass('active')
+    $(this).addClass('active')
+    $('.all-rows > div').css('display', 'none')
+    $('.sasuqi-row').css('display', 'flex')
+})
+
+$('.filter-row ul li.satesle').click(function () {
+    $('.filter-row ul li').removeClass('active')
+    $(this).addClass('active')
+    $('.all-rows > div').css('display', 'none')
+    $('.satesle-row').css('display', 'flex')
+})
+
+$('.filter-row ul li.pesticidi').click(function () {
+    $('.filter-row ul li').removeClass('active')
+    $(this).addClass('active')
+    $('.all-rows > div').css('display', 'none')
+    $('.pesticidi-row').css('display', 'flex')
+})
+
+$('.filter-row ul li.agro').click(function () {
+    $('.filter-row ul li').removeClass('active')
+    $(this).addClass('active')
+    $('.all-rows > div').css('display', 'none')
+    $('.agro-row').css('display', 'flex')
+})
 
 var swiper = new Swiper('.swiper-container', {
     slidesPerView: 3,

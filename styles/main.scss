@@ -491,6 +491,13 @@ ul {
         position: relative;
         z-index: 9;
     }
+    h3 {
+        color: white;
+        font-size: 1.4375rem;
+        text-align: center;
+        position: relative;
+        z-index: 9;
+    }
 }
 
 
@@ -1056,6 +1063,12 @@ margin-bottom: 1.25rem;
     100% { background-color: #1f5948; box-shadow: 0 0 3px #1f5948; }
 }
 
+@keyframes glowing3 {
+    0% { background-color: #f2b026; box-shadow: 0 0 3px #f2b026; }
+    50% { background-color: #f2b026; box-shadow: 0 0 40px #f2b026; }
+    100% { background-color: #f2b026; box-shadow: 0 0 3px #f2b026; }
+}
+
 .swiper-container-category .swiper-slide {
     background-image: url(/images/tired.png);
     background-position: center;
@@ -1087,6 +1100,13 @@ p.form-row-first, p.form-row-last {
 
 
 .woocommerce-checkout {
+    * {
+        box-sizing: border-box;
+    }
+    p.form-row {
+        display: flex;
+        flex-direction: column;
+    }
     input[type=text], input[type=email], input[type=password], input[type=search], input[type=number], input[type=url], input[type=tel], input[type=date], select, textarea {
         padding: 0 15px;
         max-width: 100%;
@@ -1100,8 +1120,20 @@ p.form-row-first, p.form-row-last {
         font-size: 14px;
         transition: border-color .5s ease;
     }
+    #place_order {
+        height: 3.5rem;
+        font-size: 1rem;
+        padding: 0 1.25rem;
+        width: 100%;
+        border: none;
+        background-color: #1f5948;
+        color: white;
+    }
+    .payment_method_cod {
+        margin: 20px 0;
+    }
     label {
-        display: block;
+        // display: block;
         margin-bottom: 5px;
         color: #464646;
         font-weight: 400;
@@ -1118,7 +1150,7 @@ p.form-row-first, p.form-row-last {
         margin-bottom: 20px;
         padding: 5px 15px;
         background-color: #FFF;
-        box-shadow: 1px 1px 2px rgba(0,0,0, 0.5);
+        box-shadow: rgba(100,100,111, 0.2) 0rem 1.25rem 1.8125rem 0rem;
     }
     table {
         margin-bottom: 35px;
@@ -1160,7 +1192,7 @@ p.form-row-first, p.form-row-last {
         margin-top: 15px;
         padding: 15px;
         background-color: #FFF;
-        box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+        box-shadow: rgba(100,100,111, 0.2) 0rem 1.25rem 1.8125rem 0rem;
     }
     p.form-row-first {
         float: left;
@@ -1168,6 +1200,9 @@ p.form-row-first, p.form-row-last {
     p.form-row-first, p.form-row-last {
         overflow: visible;
         width: 48%;
+    }
+    #order_comments {
+        height: 200px !important;
     }
     p.form-row-last {
         float: right;
@@ -1180,9 +1215,29 @@ p.form-row-first, p.form-row-last {
     p.form-row-wide {
         clear: both;
     }
+    .woocommerce-billing-fields {
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
 }
 
+.ht-pagination li a {
+    padding-left: 15px;
+    padding-right: 15px;
+    min-width: 40px;
+}
 
+.ht-pagination li a {
+    margin-right: 5px;
+    padding: 8px 10px;
+    border: 1px solid #eee;
+}
+
+.page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 //////////////
 
@@ -1192,7 +1247,7 @@ p.form-row-first, p.form-row-last {
     top: 30%;
     left: 0;
     border-radius: 0rem 0.625rem 0.625rem  0rem;
-    background-color: #1f5948;
+    background-color: #f2b026;
     width: 3.75rem;
     height: 14.75rem;
     display: flex;
@@ -1200,7 +1255,7 @@ p.form-row-first, p.form-row-last {
     justify-content: center;
     display: flex;
     flex-direction: column;
-    animation: glowing2 1500ms infinite;
+    animation: glowing3 1500ms infinite;
     a {
         display: flex;
         align-items: center;
@@ -1210,15 +1265,15 @@ p.form-row-first, p.form-row-last {
     }
     span {
         writing-mode: vertical-rl;
-        color: white;
+        color: #1f5948;
         margin-top: 10px;
         letter-spacing: 2px;
         font-size: 15px;
-    
+        transform: rotate(180deg);
     }
     i {
         font-size: 2.1875rem;
-        color: white;
+        color: #1f5948;
     }
 }
 
@@ -1567,7 +1622,7 @@ p.form-row-first, p.form-row-last {
 main {
     padding: 0 3.75rem;
     .top {
-        padding-top: 3.75rem;
+        padding-top: 0;
         min-height: calc(100vh - 30.375rem);
         position: relative;
         overflow: hidden;
@@ -2000,10 +2055,14 @@ main {
     }
 }
 
+
+
 .filter-row {
     margin-bottom: 3.125rem;
     .row {
         div {
+            box-sizing: border-box;
+            padding: 0 10px;
             padding-left: 0.3125rem;
             padding-right: 0.3125rem;
             margin-bottom: 0.125rem;
@@ -2173,6 +2232,62 @@ main {
       .select-options li[rel="hide"] {
         display: none;
       }
+}
+
+.sasuqi-row {
+    display: none;
+}
+
+.satesle-row {
+    display: none;
+}
+
+.agro-row {
+    display: none;
+}
+
+.cultura-row {
+    display: none;
+}
+
+.cultura {
+    background-color: #f2b026 !important;
+    a {
+        color: #1f5948 !important;
+    }
+}
+
+.filter-main-row {
+    position: fixed;
+    left: -100.75rem;
+    top: 30%;
+    z-index: 999;
+    width: 100%;
+    background-color: white;
+    transition: .5s;
+    &.active {
+        left: 3.75rem;
+        transition: .5s;
+    }
+    .filter-row {
+        margin-bottom: 0;
+    }
+    .product-filter {
+        height: 14.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        &>i {
+            font-size: 28px;
+            right: 0;
+            top: -35px;
+            position: absolute;
+            background-color: white;
+            padding: 5px;
+            cursor: pointer;
+        }
+    }
 }
 
 // Filter
@@ -3500,9 +3615,14 @@ h3,
         font-size: 15px;
     }
 
-    .footer-bs .row div {
+    .about-first h1 {
+        text-align: center;
+    }
+
+    .footer-bs > .row > div {
         text-align: left;
         align-items: flex-start;
+        margin-bottom: 10px;
     }
 
     .footer-bs .footer-nav ul.pages {
@@ -3532,6 +3652,40 @@ h3,
 
     .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
         bottom: -2px;
+    }
+    .product-search span {
+        font-size: 12px;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        display: none !important;
+    }
+
+    .product-search {
+        top: 50%;
+    }
+
+    .agronomy {
+        top: 50%;
+    }
+    
+    .filter-row {
+        box-sizing: border-box;
+        padding: 0 35px;
+    }
+
+    .woocommerce-checkout label {
+        font-size: 10px;
+    }
+
+    .container-fluid .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    #customer_details {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 
 }
