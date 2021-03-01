@@ -115,12 +115,27 @@ $('.modal-close i').click(function() {
     $("#ModalCenter").modal('hide');
 })
 
-$('.product-search').on('mousemove', function () {
+var help = false
+
+$('.product-search').on('mouseenter', function () {
+    if(help) return;
     $('.filter-main-row').addClass('active')
 });
 
 $('.close-filter').click(function() {
     $('.filter-main-row').removeClass('active')
+
+})
+
+
+$('.product-search').click(function() {
+    $('.filter-main-row').removeClass('active')
+    help = true
+    
+    setTimeout(() => {
+        help = false
+    }, 3000);
+
 })
 
 $('.filter-row ul li.sasuqi').click(function () {
@@ -176,7 +191,7 @@ var swiper = new Swiper('.swiper-container', {
 });
 
 var swiper = new Swiper('.swiper-container-category', {
-    slidesPerView: 3,
+    slidesPerView: 5,
     // init: false,
     loop: true,
     autoplay: {
@@ -194,8 +209,14 @@ var swiper = new Swiper('.swiper-container-category', {
     768: {
         slidesPerView: 3,
     },
-    1024: {
+    1300: {
         slidesPerView: 3,
+    },
+    1440: {
+        slidesPerView: 4,
+    },
+    1500: {
+        slidesPerView: 5,
     },
     }
 });
@@ -224,11 +245,10 @@ var swiper = new Swiper('.swiper-container-home', {
 });
 
 $(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
 
-    if (scroll >= 25) {
+    if (window.scrollY >= $('.top-header').height()) {
         $(".header_style_2").addClass("fixed");
-    } else if (scroll == 0) {
+    } else {
         $(".header_style_2").removeClass("fixed");
     }
 
@@ -246,6 +266,12 @@ $(".mobile-menu i").click(function() {
 $("#file-input").on('click', function () {
     $(".image-upload label").css("display" , "none");
     $(".image-upload").addClass("active");
+});
+
+
+$(".contact-form .form-row ul li").on('click', function () {
+    $(".contact-form .form-row ul li").removeClass("active");
+    $(this).addClass("active");
 });
 
 function FileName() {

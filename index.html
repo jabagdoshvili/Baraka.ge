@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ბარაქა - მეცნიერება უხვი მოსავლისთვის</title>
-    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="shortcut icon" href="/images/fav.png" />
     <link rel="stylesheet" href="/styles/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/swiper-bundle.min.css">
     <link rel="stylesheet" href="/styles/animate.css">
@@ -375,7 +375,7 @@
 
     <div class="top-header">
         <div class="container-fluid">
-            <span>მოძებნეთ სასურველი პროდუქცია</span>
+            <input type="text" placeholder="მოძებნეთ სასურველი პროდუქცია">
             <div class="search">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </div>
@@ -462,12 +462,12 @@
                                                             <a href="/culture/index.html">კულტურა</a>
                                                             <ul class="common-class sub-menu">
                                                                 <li class="child-in-child">
-                                                                    <a href="">ფუნგიციდი</a>
+                                                                    <a href="" class="sub-drop-add-class">ფუნგიციდი</a>
                                                                     <ul class="child-sub">
-                                                                        <li class=""><a href="">ინსექტიციდი</a></li>
-                                                                        <li class=""><a href="">ჰერბიციდი</a>
+                                                                        <li class=""><a href=""><img src="/images/1.png" alt=""> ინსექტიციდი</a></li>
+                                                                        <li class=""><a href=""><img src="/images/2.png" alt=""> ჰერბიციდი</a>
                                                                         </li>
-                                                                        <li class=""><a href="">ჰერბიციდი</a></li>
+                                                                        <li class=""><a href=""><img src="/images/3.png" alt=""> ჰერბიციდი</a></li>
                                                                     </ul>
                                                                 </li>
                                                                 <li class=""><a href="">ინსექტიციდი</a></li>
@@ -561,8 +561,10 @@
                 </div>
             </div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+            <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
     </div>
 
 
@@ -570,7 +572,7 @@
 
     <!----------- Partners ------------>
 
-    <div class="container-fluid home-spaces-category home-title">
+    <div class="home-spaces-category home-title">
         <div class="wow fadeInRight title-div" data-wow-duration="2s">
             <h2>კატეგორიები</h2>
         </div>
