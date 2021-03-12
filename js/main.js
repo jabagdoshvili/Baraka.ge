@@ -73,6 +73,11 @@ void function InitPancPage() {
     }
 }()
 
+
+void function setActivePage() {
+    $(`.main-menu nav > ul li a[href*="${location.pathname.replaceAll('/', '')}"]`).addClass('active')
+}()
+
 $(document).ready(function(){
     $('.customer-logos').slick({
         slidesToShow: 6,
@@ -318,3 +323,13 @@ $( ".sm_location_0" ).mouseleave(function() {
           }
         }
   }
+
+  var height = 0;
+  setInterval(() => {
+      setTimeout(() => {
+          //   $('.u-carusel ul:eq(0) li:first-child').insertAfter('.u-carusel ul:eq(0) li:last-child')
+          if(height == 280) height = 0
+          height+=40
+          $('.u-carusel ul:eq(0)').css('transform', `translateY(-${height}px)`)
+      }, 3000);
+  }, 2000);
